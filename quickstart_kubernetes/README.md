@@ -2,7 +2,7 @@
 
 This repository contains sample applications that is used to demonstrate and try out Kubernetes capability for the uninitiated.
 
-Slides that was used to present this is also provided here as well. Download the slides from quickstart_kubernetes_slides.pdf
+Slides that was used to present this is also provided here as well. Download the slides from `quickstart_kubernetes_slides.pdf`
 
 NOTE: Do not copy commands wholesale from pdfs. The pdf is generated from Google Drive and often copy and pasting code snippets from here causes issues. 
 
