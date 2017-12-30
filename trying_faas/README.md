@@ -24,7 +24,8 @@ helm init
 
 You can then proceed to follow some of the instructions or you can just continue to follow the commands here
 
-Run the following commands to get faas in
+Run the following commands to get faas in. This involves creating additional workspaces before installing it.
+This would reduce confusion when running it.
 ```
 git clone https://github.com/openfaas/faas-netes && \
   cd faas-netes
@@ -34,3 +35,7 @@ helm upgrade --install --debug --namespace openfaas \
   --reset-values --set async=false --set rbac=false --set serviceType=LoadBalancer --set functionNamespace=openfaas-fn openfaas openfaas/
 ```
 
+To delete the openfaas from the cluster
+```
+helm delete --purge openfaas
+```
