@@ -35,11 +35,17 @@ func (h fibonacciHandler) ServeHTTP (w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println("Error:", err.Error(), "Value obtained:", intValue)
 	}
-	fibonacciReturn, err := fibonacci(intValue)
-	if err != nil {
-		log.Println("Error", err.Error())
+
+	if intValue > 15 {
+		go fibonacci(intValue)
+		io.WriteString(w, "This will take a while to process")
+	} else {
+		fibonacciReturn, err := fibonacci(intValue)
+		if err != nil {
+			log.Println("Error", err.Error())
+		}
+		io.WriteString(w, strconv.Itoa(fibonacciReturn))
 	}
-	io.WriteString(w, strconv.Itoa(fibonacciReturn))
 }
 
 func fibonacci(n int) (int, error) {

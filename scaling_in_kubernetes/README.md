@@ -18,3 +18,9 @@ Command to run:
 ```
 echo "GET http://localhost:3000/fibonacci?n=12" | vegeta attack -duration=10s -rate=100  | tee results.bin | vegeta report -reporter plot > report.html
 ```
+
+# Issues
+
+- Sending such workloads into a web applications doesn't work as expected.
+- Instead of scaling the jobs equally across the pods.
+- Instead, it just continue to burden the same few initial pods - scaling didnt resolve it properly
