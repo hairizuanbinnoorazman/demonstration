@@ -8,4 +8,10 @@ def lambda_handler(event, context):
     print("Print the status code of this")
     print(response.status_code)
     
-    return('success')
+    response = {
+        "statusCode": 200,
+        "headers": {
+            "Content-Type": "*/*"
+        }
+    }    
+    return response
