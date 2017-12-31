@@ -39,3 +39,8 @@ To delete the openfaas from the cluster
 ```
 helm delete --purge openfaas
 ```
+
+# Difficulties
+
+- Using a private repository - not really supported in faas-cli yet
+- Not too sure what kind of apis available to operate and manipulate the faas service
